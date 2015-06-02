@@ -17,7 +17,7 @@ var bio = {
 		"location": "Schaumburg, IL"
 	},
 	"welcomeMessage": "Life is like riding a bicycle. To keep your balance, you must keep moving /A. Einstein/"	,
-	"skills": ["Python","HTML","CSS","JavaScript","jQuery","MS Office","OpenMind"],
+	"skills": ["Python","HTML","CSS","JavaScript","jQuery","MS Office"],
 	"biopic": "images/me.jpg"
 };
 
@@ -101,7 +101,7 @@ var education = {
 	"dates": 1987,
 	"degree": "B.Eng.",
 	"major": ["Mechanical Engineer"],
-	"location": "Kaunas, Lithuania",
+	"location": "Kaunas, LT",
 	"url": "http://ktu.edu/en"
 	},
 	{"name": "Harper College",
@@ -177,38 +177,34 @@ var projects = {
 	"title": "RiceRock",
 	"date": 2013,
 	"description": "'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship. The game is done as a project for Coursera and Rice University course 'Introduction to Interactive Programming in Python'",
-	"images": ["images/Asteroids1.jpg"],
+	"images": "images/Asteroids1.jpg",
 	"url": "https://github.com/daivaSts/Introduction-to-Interactive-Programming-in-Python",
 	},
 	{
-	"title": "RiceRock",
+	"title": "Blackjack",
 	"date": 2013,
-	"description": "'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship. The game is done as a project for Coursera and Rice University course 'Introduction to Interactive Programming in Python'",
-	"images": ["images/Blackjack.jpg"],
+	"description": "BlackJack: The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship.'RiceRock' (Asteroids): The player's spaceship goal is to destroy the asteroids before they strike the ship. The game is done as a project for Coursera and Rice University course 'Introduction to Interactive Programming in Python'",
+	"images": "images/Blackjack.jpg",
 	"url": "https://github.com/daivaSts/Introduction-to-Interactive-Programming-in-Python",
 	}
 	]
 }
 
-$("#projects").append(HTMLprojectStart);
+projects.display = function() {
 
-function displayProjects() {
 	for (item in projects.project) {
-
-		$(".project-entry").append(HTMLprojectTitle.replace("%data%",projects.project[item].title));
-		$(".project-entry").append(HTMLprojectDates.replace("%data%",projects.project[item].date));
-		$(".project-entry").append(HTMLprojectDescription.replace("%data%",projects.project[item].description));
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%",projects.project[item].title));
+		$(".project-entry:last").append(HTMLprojectDates.replace("%data%",projects.project[item].date));
+		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%",projects.project[item].description));
 		var githubUrl = HTMLProjectURL.replace("%#%",projects.project[item].url)
-		$(".project-entry").append(githubUrl.replace("%data%",projects.project[item].url))
-
-
-		for (image in projects.project[item].images) {
-			$(".project-entry").append(HTMLprojectImage.replace("%data%",projects.project[item].images[image]));
-			};
-
-	};
+		$(".project-entry:last").append(githubUrl.replace("%data%",projects.project[item].url))
+		$(".project-entry:last").append(HTMLprojectImage.replace("%data%",projects.project[item].images));
+	}
 }
-displayProjects()
 
+projects.display();
+$("#mapDiv").append(googleMap);
 $("#mapDiv").append("<embed src='https://www.google.com/maps/d/embed?mid=zK8pEAt40ct8.kKHUDbnMhHJg&z=6' width='400' height='400'></embed>")
+
 $("#main").append(internationalizeButton);
