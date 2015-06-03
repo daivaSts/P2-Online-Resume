@@ -43,7 +43,7 @@ h4 {
 }
 
 h2, h3, h4, h5 {
-  padding:10px;
+  padding: 10px;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -53,8 +53,8 @@ h2, h3, h4, h5 {
   font-style: italic;
   font-size: 14px;
   color: #999999;
-  line-height: 16px;
   float: left;
+  width: 80%;
 }
 
 .location-text {
@@ -63,25 +63,25 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
+  width: 20%;
 
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   color: #333333;
   line-height: 21px;
+  margin-bottom: 5px;
 }
 
 a {
-  color: #1199C3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   color: #F3F3F3;
   line-height: 28px;
 }
@@ -134,7 +134,7 @@ a {
   padding-top: 2.5%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 2.5%
+  padding-bottom: 2.5%;
 }
 
 ul {
@@ -201,7 +201,6 @@ embed, #map {
   height: 100%;
   width: 45%;
   margin: auto;
-
 }
 
 #mapDiv {
@@ -221,10 +220,6 @@ embed, #map {
 
 #bullet {
   color: #F5A623;
-}
-
-a {
-  color: #000080;
 }
 
 .project-box {

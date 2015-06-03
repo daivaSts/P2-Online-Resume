@@ -30,32 +30,32 @@ var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills"
 var HTMLskills = '<ul class="flex-item"><span class="orange-text">&#8226;<span class="white-text">%data%</span></span></ul>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a href="#"><span class="orange-text">&#8226</span>%data%';
 var HTMLworkTitle = '  - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescription = '<p><br>%data%</br></p>';
 
 
 var HTMLprojectStart = '<div class="project-entry" id="%data%"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a href="#"><span class="orange-text">&#8226</span>%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" class="project-img">';
 var HTMLProjectURL = '<a href="%#%">%data%</a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="#"><span class="orange-text">&#8226</span>%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineTitle = '<div href="#"><span class="orange-text">&#8226</span>%data%';
+var HTMLonlineSchool = ' - %data%</div>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<a href="#">%data%</a><br>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -160,7 +160,6 @@ function initializeMap() {
     var bounds = window.mapBounds;            // current boundaries of the map window
     var infotext = {"Elgin, IL, USA": 'AwesomeCampaigns.com.inc (former <b>ID Graphics, Inc.</b>) Commercial signage, real estate and political signs, and printed marketing materials.',
                     "Schaumburg, IL, USA": "<b>AlphaGraphics</b><br>Global leader in marketing and print communications and is one-stop shop for all of your marketing and printing needs.",
-                    "Kaunas, Lithuania":"<b>Kaunas University of Technology (KTU)</b> is a public technical university located in Kaunas, Lithuania, established in 1920.",
                     "Palatine, IL, USA": "<b>The Harper College</b> is a comprehensive community college in Palatine, IL. It was opened in September 1967, named for Dr. William Rainey Harper, a pioneer in the junior college movement in the United States and the first president of the University of Chicago."
 
     };
@@ -182,7 +181,7 @@ function initializeMap() {
 
     });
 
-    //************************************************************** hmmmm, I wonder what this is about...
+    // hmmmm, I wonder what this is about
     google.maps.event.addListener(marker, 'click', function() {
 
       if(!marker.open){
